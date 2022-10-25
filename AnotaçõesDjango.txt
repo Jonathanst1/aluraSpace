@@ -1,0 +1,23 @@
+Criar um ambiente  virtual
+ativar  o ambiente virtual
+instalar o django 
+verificar os requerimentos e criar o arquivo requirements.txt  pip freeze > requirement.txt
+
+django-admin startproject setup - > dá o start no projeto e cria o arquivo manage.py
+
+python manage.py runserver -> roda o servidor do projeto
+
+NÃO ENVIE A SECRETKEY PARA A PRODUÇÃO
+
+CRIE VARIÁVEIS DE AMBIENTE instalando python-dotenv obs* pare o terminal 
+crie um arquivo .env fora da pasta setup e coloque a SECRET KEY
+
+*importando a biblioteca
+from pathlib import Path, os
+
+faça o load_dotenv()
+
+e assim importe o secret key 
+
+SECRET_KEY = str(os.getenv('SECRET_KEY')) -> cole isso dentro do .env
+use o git ignore antes de enviar o projeto para o github*********
