@@ -21,3 +21,44 @@ e assim importe o secret key
 
 SECRET_KEY = str(os.getenv('SECRET_KEY')) -> cole isso dentro do .env
 use o git ignore antes de enviar o projeto para o github*********
+
+para ativar o env desse projeto env\Scripts\activate 
+
+o arquivo views é responsavel por renderizar tudo que aparece na tela
+importe as rotas no urls.py dentro da pasta com o nome do projeto inteiro
+
+crie um arquivo dentro da pasta do seu app chamado urls.py , sempre no plural 
+from django.urls import path
+from galeria.views import index 
+
+urlpatterns = [
+
+    path('', index)
+
+]
+
+
+e assim ficará o urls.py do sistema
+from django.contrib import admin
+from django.urls import path, include
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('galeria.urls'))
+]
+
+para informar o local das suas paginas html 
+crie uma pasta chamada templates
+
+e informe no settings.py do sistema linha 58
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+e assim ficará o views.py da galeria ou seja do seu app 
+from django.shortcuts import render
+
+
+def index(request):
+    return render(request, 'index.html')
+
+    
